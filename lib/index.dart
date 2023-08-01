@@ -2,10 +2,10 @@
 export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/register/register_widget.dart' show RegisterWidget;
 export '/selectinterest/selectinterest_widget.dart' show SelectinterestWidget;
-export '/homefeed/homefeed_widget.dart' show HomefeedWidget;
+export '/home/home_widget.dart' show HomeWidget;
 export '/detail/detail_widget.dart' show DetailWidget;
 export '/edit_event/edit_event_widget.dart' show EditEventWidget;
-export '/ecreate/ecreate_widget.dart' show EcreateWidget;
+export '/create/create_widget.dart' show CreateWidget;
 export '/join/join_widget.dart' show JoinWidget;
 export '/delete/delete_widget.dart' show DeleteWidget;
 export '/showcatgoryactivity/showcatgoryactivity_widget.dart'

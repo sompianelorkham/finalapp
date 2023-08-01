@@ -63,6 +63,8 @@ class _JoinWidgetState extends State<JoinWidget> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _model = createModel(context, () => JoinModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -196,8 +198,8 @@ class _JoinWidgetState extends State<JoinWidget> with TickerProviderStateMixin {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 50.0, 0.0, 16.0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed('Notification');
                                   },
                                   text: 'ເຂົ້າຮ່ວມ',
                                   options: FFButtonOptions(
@@ -213,7 +215,7 @@ class _JoinWidgetState extends State<JoinWidget> with TickerProviderStateMixin {
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
                                           color: Colors.white,
-                                          fontSize: 18.0,
+                                          fontSize: 25.0,
                                         ),
                                     elevation: 3.0,
                                     borderSide: BorderSide(

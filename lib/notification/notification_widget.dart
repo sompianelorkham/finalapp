@@ -29,6 +29,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
     _model.textController3 ??= TextEditingController();
     _model.titleController2 ??= TextEditingController();
     _model.titleController3 ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -54,7 +55,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
-              context.pushNamed('Homefeed');
+              context.pushNamed('Home');
             },
             child: Icon(
               Icons.chevron_left,
@@ -68,6 +69,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
               'ການແຈ້ງເຕືອນ',
               style: FlutterFlowTheme.of(context).headlineLarge.override(
                     fontFamily: 'Noto Serif Lao',
+                    color: Color(0xFF3386F4),
                     fontSize: 30.0,
                   ),
             ),
@@ -146,7 +148,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                     'ຄຳຂໍເຂົ້າຮ່ວມ',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Noto Serif Lao',
-                          fontSize: 20.0,
+                          fontSize: 30.0,
                         ),
                   ),
                 ),
@@ -400,45 +402,48 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                 ),
               ],
             ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(1.0, 0.0),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
-                    child: Container(
-                      width: 32.0,
-                      height: 32.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).accent1,
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 2.0,
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional(1.0, 0.0),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          10.0, 10.0, 10.0, 10.0),
+                      child: Container(
+                        width: 32.0,
+                        height: 32.0,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).accent1,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 2.0,
+                          ),
                         ),
-                      ),
-                      child: Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Icon(
-                          Icons.person_add_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 18.0,
+                        child: Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Icon(
+                            Icons.person_add_rounded,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 18.0,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Text(
-                  'ຊື່ຜູ້ສົ່ງຄຳຂໍເຂົ້າຮ່ວມ',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Noto Serif Lao',
-                        color: Color(0xFF050505),
-                        fontSize: 20.0,
-                      ),
-                ),
-              ],
+                  Text(
+                    'ຊື່ຜູ້ສົ່ງຄຳຂໍເຂົ້າຮ່ວມ',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Noto Serif Lao',
+                          color: Color(0xFF050505),
+                          fontSize: 20.0,
+                        ),
+                  ),
+                ],
+              ),
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
@@ -766,7 +771,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                     .override(
                                       fontFamily: 'Noto Serif Lao',
                                       color: Color(0xFF050505),
-                                      fontSize: 18.0,
+                                      fontSize: 23.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -806,7 +811,6 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                   .override(
                                     fontFamily: 'Noto Serif Lao',
                                     color: Color(0xFF240EEE),
-                                    fontSize: 18.0,
                                   ),
                               keyboardType: TextInputType.multiline,
                               validator: _model.titleController3Validator

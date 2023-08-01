@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'edit_event_model.dart';
 export 'edit_event_model.dart';
@@ -32,6 +31,7 @@ class _EditEventWidgetState extends State<EditEventWidget> {
     _model.datetimeController1 ??= TextEditingController();
     _model.datetimeController2 ??= TextEditingController();
     _model.locationController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -186,7 +186,6 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                                   autofillHints: [AutofillHints.name],
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'ເຕະບານ',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
@@ -286,7 +285,7 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                                 autofillHints: [AutofillHints.jobTitle],
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'ຈຳນວນຄົນ :  12-28 ຄົນ',
+                                  labelText: 'ຈຳນວນຄົນ ',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
@@ -344,40 +343,6 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                           ),
                         ],
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 3.0, 15.0, 0.0),
-                                child: LinearPercentIndicator(
-                                  percent: 0.6,
-                                  lineHeight: 18.0,
-                                  animation: true,
-                                  progressColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  backgroundColor: Color(0xFFE0E3E7),
-                                  center: Text(
-                                    '12',
-                                    textAlign: TextAlign.start,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          lineHeight: 1.0,
-                                        ),
-                                  ),
-                                  barRadius: Radius.circular(50.0),
-                                  padding: EdgeInsets.zero,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
@@ -389,11 +354,14 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller: _model.ageController,
+                                  onFieldSubmitted: (_) async {
+                                    context.pushNamed('detail');
+                                  },
                                   autofocus: true,
                                   autofillHints: [AutofillHints.middleName],
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'ຊ່ວງອາຍຸ:   17-45 ປີ',
+                                    labelText: 'ຊ່ວງອາຍຸ: ',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
@@ -465,7 +433,7 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                                 autofillHints: [AutofillHints.middleName],
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'ວັນທີ: 25/7/2023',
+                                  labelText: 'ວັນທີ່:',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
@@ -534,7 +502,7 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                                 autofillHints: [AutofillHints.middleName],
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'ຊ່ວງເວລາ:    15:00-19:30',
+                                  labelText: 'ຊ່ວງເວລາ:  ',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
@@ -603,7 +571,7 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                                 autofillHints: [AutofillHints.middleName],
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'ສະຖານທີ່:         ເດີ່ນກິລາ ມຊ',
+                                  labelText: 'ສະຖານທີ່:        ',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
@@ -663,10 +631,10 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              20.0, 0.0, 0.0, 0.0),
+                              20.0, 10.0, 0.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('edi pressed ...');
+                            onPressed: () async {
+                              context.pushNamed('detail');
                             },
                             text: 'ບັນທຶກ',
                             options: FFButtonOptions(
@@ -682,7 +650,7 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                                   .override(
                                     fontFamily: 'Noto Serif Lao',
                                     color: Colors.white,
-                                    fontSize: 25.0,
+                                    fontSize: 30.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                               borderSide: BorderSide(

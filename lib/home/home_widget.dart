@@ -1,4 +1,3 @@
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -6,27 +5,27 @@ import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'homefeed_model.dart';
-export 'homefeed_model.dart';
+import 'home_model.dart';
+export 'home_model.dart';
 
-class HomefeedWidget extends StatefulWidget {
-  const HomefeedWidget({Key? key}) : super(key: key);
+class HomeWidget extends StatefulWidget {
+  const HomeWidget({Key? key}) : super(key: key);
 
   @override
-  _HomefeedWidgetState createState() => _HomefeedWidgetState();
+  _HomeWidgetState createState() => _HomeWidgetState();
 }
 
-class _HomefeedWidgetState extends State<HomefeedWidget> {
-  late HomefeedModel _model;
+class _HomeWidgetState extends State<HomeWidget> {
+  late HomeModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomefeedModel());
+    _model = createModel(context, () => HomeModel());
 
-    _model.textController ??= TextEditingController();
+    _model.titleController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -114,144 +113,235 @@ class _HomefeedWidgetState extends State<HomefeedWidget> {
                                                                     0.0,
                                                                     12.0,
                                                                     0.0),
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Icon(
-                                                              Icons
-                                                                  .search_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 24.0,
-                                                            ),
-                                                            Expanded(
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                child:
-                                                                    Container(
-                                                                  width: 200.0,
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                                'showcatgoryactivity');
+                                                          },
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Expanded(
+                                                                child: Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
                                                                   child:
-                                                                      TextFormField(
-                                                                    controller:
-                                                                        _model
-                                                                            .textController,
-                                                                    obscureText:
-                                                                        false,
-                                                                    decoration:
-                                                                        InputDecoration(
-                                                                      labelText:
-                                                                          'ທ່ານກຳລັງຊອກຫາຫຍັງ?',
-                                                                      labelStyle: FlutterFlowTheme.of(
+                                                                      Container(
+                                                                    width: double
+                                                                        .infinity,
+                                                                    child:
+                                                                        TextFormField(
+                                                                      controller:
+                                                                          _model
+                                                                              .titleController,
+                                                                      autofocus:
+                                                                          true,
+                                                                      autofillHints: [
+                                                                        AutofillHints
+                                                                            .name
+                                                                      ],
+                                                                      obscureText:
+                                                                          false,
+                                                                      decoration:
+                                                                          InputDecoration(
+                                                                        labelStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyLarge
+                                                                            .override(
+                                                                              fontFamily: 'Noto Serif Lao',
+                                                                              color: Color(0xFF240EEE),
+                                                                              fontSize: 20.0,
+                                                                            ),
+                                                                        hintText:
+                                                                            '      search for Activity',
+                                                                        enabledBorder:
+                                                                            InputBorder.none,
+                                                                        focusedBorder:
+                                                                            InputBorder.none,
+                                                                        errorBorder:
+                                                                            InputBorder.none,
+                                                                        focusedErrorBorder:
+                                                                            InputBorder.none,
+                                                                        filled:
+                                                                            true,
+                                                                        fillColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .labelMedium
+                                                                          .bodyLarge
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Noto Serif Lao',
+                                                                            color:
+                                                                                Color(0xFF240EEE),
                                                                             fontSize:
-                                                                                25.0,
+                                                                                20.0,
                                                                           ),
-                                                                      hintStyle:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMedium,
-                                                                      enabledBorder:
-                                                                          InputBorder
-                                                                              .none,
-                                                                      focusedBorder:
-                                                                          InputBorder
-                                                                              .none,
-                                                                      errorBorder:
-                                                                          InputBorder
-                                                                              .none,
-                                                                      focusedErrorBorder:
-                                                                          InputBorder
-                                                                              .none,
-                                                                      filled:
-                                                                          true,
-                                                                      fillColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .secondaryBackground,
+                                                                      keyboardType:
+                                                                          TextInputType
+                                                                              .multiline,
+                                                                      validator: _model
+                                                                          .titleControllerValidator
+                                                                          .asValidator(
+                                                                              context),
                                                                     ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Noto Serif Lao',
-                                                                          color:
-                                                                              Color(0xFFFEFEFE),
-                                                                        ),
-                                                                    cursorColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                    validator: _model
-                                                                        .textControllerValidator
-                                                                        .asValidator(
-                                                                            context),
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ),
-                                                          ],
+                                                              Icon(
+                                                                Icons
+                                                                    .search_rounded,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                size: 25.0,
+                                                              ),
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 10.0,
                                                                 0.0, 0.0),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Container(
-                                                            width: 50.0,
-                                                            height: 50.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .alternate,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          18.0),
-                                                            ),
-                                                            child: Align(
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Icon(
-                                                                Icons.home,
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        13.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Container(
+                                                              width: 50.0,
+                                                              height: 50.0,
+                                                              decoration:
+                                                                  BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryText,
+                                                                    .primaryBtnText,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            18.0),
+                                                              ),
+                                                              child: Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Icon(
+                                                                  Icons.home,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Padding(
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        50.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                context.pushNamed(
+                                                                    'Category');
+                                                              },
+                                                              child: Container(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBtnText,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              18.0),
+                                                                ),
+                                                                child: Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      context.pushNamed(
+                                                                          'Category');
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .category,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      size:
+                                                                          30.0,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
@@ -259,154 +349,138 @@ class _HomefeedWidgetState extends State<HomefeedWidget> {
                                                                       5.0,
                                                                       0.0,
                                                                       0.0),
-                                                          child: Container(
-                                                            width: 50.0,
-                                                            height: 50.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .alternate,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          18.0),
-                                                            ),
-                                                            child: Align(
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: InkWell(
-                                                                splashColor: Colors
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
                                                                     .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  context.pushNamed(
-                                                                      'Category');
-                                                                },
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .category,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                                  size: 30.0,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                  'Notification');
+                                                            },
+                                                            child: Container(
+                                                              width: 50.0,
+                                                              height: 50.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBtnText,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            18.0),
+                                                              ),
+                                                              child: Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    context.pushNamed(
+                                                                        'Notification');
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .notifications,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    size: 30.0,
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    50.0,
-                                                                    5.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Container(
-                                                          width: 50.0,
-                                                          height: 50.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .alternate,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        18.0),
-                                                          ),
-                                                          child: Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                context.pushNamed(
-                                                                    'Notification');
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .notifications,
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      50.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                  'profile');
+                                                            },
+                                                            child: Container(
+                                                              width: 50.0,
+                                                              height: 50.0,
+                                                              decoration:
+                                                                  BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryText,
-                                                                size: 30.0,
+                                                                    .primaryBtnText,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            18.0),
+                                                              ),
+                                                              child: Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    context.pushNamed(
+                                                                        'profile');
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .account_box,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    size: 30.0,
+                                                                  ),
+                                                                ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    50.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Container(
-                                                          width: 50.0,
-                                                          height: 50.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .alternate,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        18.0),
-                                                          ),
-                                                          child: Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                context.pushNamed(
-                                                                    'profile');
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .account_box,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                size: 30.0,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
                                                   Expanded(
                                                     child: DefaultTabController(
@@ -496,26 +570,16 @@ class _HomefeedWidgetState extends State<HomefeedWidget> {
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: 'Noto Serif Lao',
                                                                                                         color: Color(0xFF102FE8),
-                                                                                                        fontSize: 20.0,
+                                                                                                        fontSize: 23.0,
                                                                                                       ),
                                                                                                 ),
                                                                                                 Row(
                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                   children: [
-                                                                                                    FlutterFlowIconButton(
-                                                                                                      borderColor: Color(0xFFF3F3F4),
-                                                                                                      borderRadius: 20.0,
-                                                                                                      borderWidth: 1.0,
-                                                                                                      buttonSize: 40.0,
-                                                                                                      fillColor: Color(0xFFF3F3F4),
-                                                                                                      icon: Icon(
-                                                                                                        Icons.favorite_border_rounded,
-                                                                                                        color: Color(0xFF102FE8),
-                                                                                                        size: 24.0,
-                                                                                                      ),
-                                                                                                      onPressed: () {
-                                                                                                        print('IconButton pressed ...');
-                                                                                                      },
+                                                                                                    Icon(
+                                                                                                      Icons.favorite_rounded,
+                                                                                                      color: Color(0xFF5E4DF5),
+                                                                                                      size: 24.0,
                                                                                                     ),
                                                                                                   ],
                                                                                                 ),
@@ -603,7 +667,7 @@ class _HomefeedWidgetState extends State<HomefeedWidget> {
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Noto Serif Lao',
                                                                                                     color: Color(0xFF102FE8),
-                                                                                                    fontSize: 20.0,
+                                                                                                    fontSize: 23.0,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -715,7 +779,7 @@ class _HomefeedWidgetState extends State<HomefeedWidget> {
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: 'Noto Serif Lao',
                                                                                                       color: Color(0xFF102FE8),
-                                                                                                      fontSize: 20.0,
+                                                                                                      fontSize: 23.0,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -810,12 +874,25 @@ class _HomefeedWidgetState extends State<HomefeedWidget> {
                                                                               0.0,
                                                                               0.0),
                                                                           child:
-                                                                              Icon(
-                                                                            Icons.add_circle,
-                                                                            color:
-                                                                                Color(0xFF240EEE),
-                                                                            size:
-                                                                                60.0,
+                                                                              InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              context.pushNamed('Create');
+                                                                            },
+                                                                            child:
+                                                                                Icon(
+                                                                              Icons.add_circle,
+                                                                              color: Color(0xFF240EEE),
+                                                                              size: 60.0,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ],

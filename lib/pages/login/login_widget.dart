@@ -28,11 +28,12 @@ class _LoginWidgetState extends State<LoginWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      context.pushNamed('Register');
+      context.pushNamed('Home');
     });
 
     _model.emailAddressController ??= TextEditingController();
     _model.passwordController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -146,7 +147,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             .labelSmall
                                             .override(
                                               fontFamily: 'Noto Serif Lao',
-                                              fontSize: 18.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 20.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -216,7 +220,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Noto Serif Lao',
-                                              fontSize: 18.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 20.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -289,8 +296,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 15.0, 0.0, 16.0),
                                   child: FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      context.pushNamed('Home');
                                     },
                                     text: 'ເຂົ້າສູ່ລະບົບ',
                                     options: FFButtonOptions(
@@ -307,7 +314,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           .override(
                                             fontFamily: 'Noto Serif Lao',
                                             color: Colors.white,
-                                            fontSize: 18.0,
+                                            fontSize: 25.0,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(
@@ -336,7 +343,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         children: [
                                           TextSpan(
                                             text: 'ທ່ານມີບັນຊີແລ້ວບໍ່? ',
-                                            style: TextStyle(),
+                                            style: TextStyle(
+                                              fontSize: 18.0,
+                                            ),
                                           ),
                                           TextSpan(
                                             text: 'ສ້າງບັນຊີ',
@@ -347,6 +356,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
+                                                  fontSize: 18.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                           )
@@ -395,7 +405,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Noto Serif Lao',
-                                        fontSize: 16.0,
+                                        fontSize: 18.0,
                                       ),
                                 ),
                               ),
@@ -421,7 +431,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Noto Serif Lao',
-                                      fontSize: 16.0,
+                                      fontSize: 18.0,
                                     ),
                               ),
                             ),

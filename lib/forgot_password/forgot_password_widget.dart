@@ -25,6 +25,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
     _model = createModel(context, () => ForgotPasswordModel());
 
     _model.emailAddressController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -58,10 +59,10 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   padding:
                       EdgeInsetsDirectional.fromSTEB(100.0, 80.0, 0.0, 0.0),
                   child: Text(
-                    'Foegot Passwprd',
+                    'Forgot Password',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Noto Serif Lao',
-                          color: FlutterFlowTheme.of(context).primaryText,
+                          color: Color(0xFFB60B2E),
                           fontSize: 25.0,
                         ),
                   ),
@@ -73,6 +74,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
             'ປ້ອນອີເມວທີ່ຕ້ອງການປ່ຽນລະຫັດ',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Noto Serif Lao',
+                  color: Color(0xFF5E4DF5),
                   fontSize: 20.0,
                 ),
           ),
@@ -106,14 +108,18 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'email Address',
-                            labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                            labelStyle:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Readex Pro',
+                                      fontSize: 20.0,
+                                    ),
                             hintText: 'Enter your email...',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Lexend Deca',
                                   color: Color(0xFF57636C),
-                                  fontSize: 18.0,
+                                  fontSize: 20.0,
                                   fontWeight: FontWeight.normal,
                                 ),
                             enabledBorder: OutlineInputBorder(
@@ -150,7 +156,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                             contentPadding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 24.0, 20.0, 24.0),
                           ),
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 20.0,
+                                  ),
                           maxLines: null,
                           validator: _model.emailAddressControllerValidator
                               .asValidator(context),
@@ -189,8 +199,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       child: Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button-Login pressed ...');
+                          onPressed: () async {
+                            context.pushNamed('Login');
                           },
                           text: 'ສົ່ງຂໍ້ຄວາມຢືນຢັນ',
                           options: FFButtonOptions(
@@ -207,7 +217,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                   fontFamily: 'Noto Serif Lao',
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  fontSize: 18.0,
+                                  fontSize: 20.0,
                                 ),
                             elevation: 3.0,
                             borderSide: BorderSide(

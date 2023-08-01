@@ -23,6 +23,8 @@ class _CategoryWidgetState extends State<CategoryWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CategoryModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -169,7 +171,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),
@@ -182,7 +184,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),
@@ -253,7 +255,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),
@@ -266,7 +268,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),
@@ -337,7 +339,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),
@@ -350,7 +352,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),
@@ -421,7 +423,9 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),
@@ -434,7 +438,9 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),
@@ -505,7 +511,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),
@@ -518,7 +524,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
-                                          fontSize: 16.0,
+                                          fontSize: 18.0,
                                         ),
                                   ),
                                 ),

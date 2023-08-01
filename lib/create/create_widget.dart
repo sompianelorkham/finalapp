@@ -5,27 +5,26 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'ecreate_model.dart';
-export 'ecreate_model.dart';
+import 'create_model.dart';
+export 'create_model.dart';
 
-class EcreateWidget extends StatefulWidget {
-  const EcreateWidget({Key? key}) : super(key: key);
+class CreateWidget extends StatefulWidget {
+  const CreateWidget({Key? key}) : super(key: key);
 
   @override
-  _EcreateWidgetState createState() => _EcreateWidgetState();
+  _CreateWidgetState createState() => _CreateWidgetState();
 }
 
-class _EcreateWidgetState extends State<EcreateWidget> {
-  late EcreateModel _model;
+class _CreateWidgetState extends State<CreateWidget> {
+  late CreateModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EcreateModel());
+    _model = createModel(context, () => CreateModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -39,6 +38,7 @@ class _EcreateWidgetState extends State<EcreateWidget> {
     _model.timeController ??= TextEditingController();
     _model.locationController ??= TextEditingController();
     _model.activitydetailController3 ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -185,7 +185,6 @@ class _EcreateWidgetState extends State<EcreateWidget> {
                                 autofillHints: [AutofillHints.jobTitle],
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'ເຕະບານ',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
@@ -287,7 +286,8 @@ class _EcreateWidgetState extends State<EcreateWidget> {
                                       .override(
                                         fontFamily: 'Noto Serif Lao',
                                         color: Color(0xFF050505),
-                                        fontSize: 20.0,
+                                        fontSize: 23.0,
+                                        lineHeight: 103.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -335,39 +335,6 @@ class _EcreateWidgetState extends State<EcreateWidget> {
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: Align(
-                              alignment: AlignmentDirectional(1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 5.0, 0.0, 0.0),
-                                child: LinearPercentIndicator(
-                                  percent: 0.8,
-                                  width: 140.0,
-                                  lineHeight: 18.0,
-                                  animation: true,
-                                  progressColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).accent4,
-                                  center: Text(
-                                    '5',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 18.0,
-                                          letterSpacing: 10.0,
-                                          lineHeight: 1.0,
-                                        ),
-                                  ),
-                                  barRadius: Radius.circular(24.0),
-                                  padding: EdgeInsets.zero,
-                                ),
-                              ),
-                            ),
-                          ),
                         ],
                       ),
                       Divider(
@@ -391,13 +358,13 @@ class _EcreateWidgetState extends State<EcreateWidget> {
                                   autofillHints: [AutofillHints.jobTitle],
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'ຊ່ວງອາຍຸ:             17-40ປີ',
+                                    labelText: 'ຊ່ວງອາຍຸ:            ',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
                                           color: Color(0xFF050505),
-                                          fontSize: 20.0,
+                                          fontSize: 23.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -466,15 +433,14 @@ class _EcreateWidgetState extends State<EcreateWidget> {
                                     autofillHints: [AutofillHints.jobTitle],
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText:
-                                          'ວັນທີ່ເລີ່ມ/ວັນທີສິ້ນສຸດ:    25/7/2023',
+                                      labelText: 'ວັນທີ່ເລີ່ມ/ວັນທີສິ້ນສຸດ:  ',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
                                             fontFamily: 'Noto Serif Lao',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 20.0,
+                                            fontSize: 23.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -546,13 +512,13 @@ class _EcreateWidgetState extends State<EcreateWidget> {
                                   autofillHints: [AutofillHints.name],
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'ຊ່ວງເວລາ:   15:00-19:00',
+                                    labelText: 'ຊ່ວງເວລາ:  ',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
                                           color: Color(0xFF050505),
-                                          fontSize: 20.0,
+                                          fontSize: 23.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -617,13 +583,13 @@ class _EcreateWidgetState extends State<EcreateWidget> {
                                 autofillHints: [AutofillHints.name],
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'ສະຖານທີ່:  ເດີ່ນກິລາສາທິດ',
+                                  labelText: 'ສະຖານທີ່: ',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Noto Serif Lao',
                                         color: Color(0xFF050505),
-                                        fontSize: 20.0,
+                                        fontSize: 23.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -693,7 +659,7 @@ class _EcreateWidgetState extends State<EcreateWidget> {
                                 .override(
                                   fontFamily: 'Noto Serif Lao',
                                   color: Colors.white,
-                                  fontSize: 25.0,
+                                  fontSize: 30.0,
                                 ),
                             elevation: 3.0,
                             borderSide: BorderSide(

@@ -33,6 +33,7 @@ class _DetailWidgetState extends State<DetailWidget> {
     _model.genderController1 ??= TextEditingController();
     _model.titleController2 ??= TextEditingController();
     _model.genderController2 ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -198,7 +199,6 @@ class _DetailWidgetState extends State<DetailWidget> {
                                       color: Color(0xFF3386F4),
                                       fontSize: 25.0,
                                     ),
-                                hintText: 'ເຕະບານ',
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
@@ -307,9 +307,8 @@ class _DetailWidgetState extends State<DetailWidget> {
                                 .override(
                                   fontFamily: 'Noto Serif Lao',
                                   color: Color(0xFF050505),
-                                  fontSize: 22.0,
+                                  fontSize: 23.0,
                                 ),
-                            hintText: '25/7/2023',
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context)
@@ -391,13 +390,13 @@ class _DetailWidgetState extends State<DetailWidget> {
                               autofillHints: [AutofillHints.name],
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'ເດີ່ນກິລາໂຮງຮຽນສາທິດ',
+                                labelText: 'ສະຖານທີ່',
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
                                       fontFamily: 'Noto Serif Lao',
                                       color: Color(0xFF050505),
-                                      fontSize: 22.0,
+                                      fontSize: 23.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -488,14 +487,14 @@ class _DetailWidgetState extends State<DetailWidget> {
                               autofillHints: [AutofillHints.gender],
                               obscureText: false,
                               decoration: InputDecoration(
+                                labelText: 'ຊື່ຜູ້ສ້າງ',
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
                                       fontFamily: 'Noto Serif Lao',
                                       color: Color(0xFF050505),
-                                      fontSize: 20.0,
+                                      fontSize: 23.0,
                                     ),
-                                hintText: 'ສົມຊາຍ',
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
@@ -601,14 +600,14 @@ class _DetailWidgetState extends State<DetailWidget> {
                                 autofillHints: [AutofillHints.gender],
                                 obscureText: false,
                                 decoration: InputDecoration(
+                                  labelText: 'ເພດ',
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
                                         fontFamily: 'Noto Serif Lao',
                                         color: Color(0xFF050505),
-                                        fontSize: 20.0,
+                                        fontSize: 23.0,
                                       ),
-                                  hintText: 'ຊາຍ',
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
@@ -663,6 +662,7 @@ class _DetailWidgetState extends State<DetailWidget> {
                 ),
                 Container(
                   height: 200.0,
+                  decoration: BoxDecoration(),
                   child: Stack(
                     children: [
                       Padding(
@@ -676,7 +676,7 @@ class _DetailWidgetState extends State<DetailWidget> {
                             autofillHints: [AutofillHints.jobTitle],
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: '13-28 ຄົນ',
+                              labelText: 'ຈຳນວນຄົນ',
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
@@ -713,10 +713,10 @@ class _DetailWidgetState extends State<DetailWidget> {
                               alignment: AlignmentDirectional(1.0, 0.0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    250.0, 0.0, 0.0, 20.0),
+                                    250.0, 0.0, 0.0, 50.0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed('join');
                                   },
                                   text: 'ເຂົ້າຮ່ວມ',
                                   options: FFButtonOptions(
@@ -731,7 +731,7 @@ class _DetailWidgetState extends State<DetailWidget> {
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
                                           color: Colors.white,
-                                          fontSize: 20.0,
+                                          fontSize: 25.0,
                                         ),
                                     elevation: 3.0,
                                     borderSide: BorderSide(

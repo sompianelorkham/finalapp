@@ -24,6 +24,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfileModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -54,7 +56,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pushNamed('Homefeed');
+              context.pushNamed('Home');
             },
           ),
           title: Text(
@@ -128,18 +130,19 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'ຊື່:  xxxxxxxxxx',
+                                'somxay',
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
                                       fontFamily: 'Noto Serif Lao',
+                                      fontSize: 25.0,
                                     ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
-                                  'email: xxxxxxxx',
+                                  'somxay@gmail.com',
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
@@ -175,38 +178,47 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Icon(
-                          Icons.person_outline,
-                          color: Color(0xFFE66A42),
-                          size: 30.0,
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'ບັນຊີຂອງຂ້ອຍ',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyLarge
-                                  .override(
-                                    fontFamily: 'Noto Serif Lao',
-                                    fontSize: 18.0,
-                                  ),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('editprofile');
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Icon(
+                            Icons.person_outline,
+                            color: Color(0xFFE66A42),
+                            size: 30.0,
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'ບັນຊີຂອງຂ້ອຍ',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      fontFamily: 'Noto Serif Lao',
+                                      fontSize: 25.0,
+                                    ),
+                              ),
                             ),
                           ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(0.9, 0.0),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 18.0,
+                          Align(
+                            alignment: AlignmentDirectional(0.9, 0.0),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 18.0,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -256,7 +268,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     .bodyLarge
                                     .override(
                                       fontFamily: 'Noto Serif Lao',
-                                      fontSize: 18.0,
+                                      fontSize: 25.0,
                                     ),
                               ),
                             ),

@@ -110,6 +110,8 @@ class _WellcomeWidgetState extends State<WellcomeWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => WellcomeModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -207,8 +209,8 @@ class _WellcomeWidgetState extends State<WellcomeWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 16.0),
                                   child: FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      context.pushNamed('Home');
                                     },
                                     text: 'ຖັດໄປ',
                                     options: FFButtonOptions(

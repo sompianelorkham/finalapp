@@ -65,6 +65,8 @@ class _DeleteWidgetState extends State<DeleteWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => DeleteModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -82,7 +84,7 @@ class _DeleteWidgetState extends State<DeleteWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: Color(0xFF3386F4),
+          backgroundColor: Color(0xFF5E4DF5),
           automaticallyImplyLeading: true,
           actions: [],
           centerTitle: true,
@@ -140,27 +142,31 @@ class _DeleteWidgetState extends State<DeleteWidget>
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          70.0, 50.0, 0.0, 0.0),
-                                      child: FlutterFlowIconButton(
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        borderRadius: 50.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 80.0,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .accent1,
-                                        icon: Icon(
-                                          Icons.delete,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 50.0,
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            100.0, 50.0, 0.0, 0.0),
+                                        child: FlutterFlowIconButton(
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          borderRadius: 50.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 80.0,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .accent1,
+                                          icon: Icon(
+                                            Icons.delete,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            size: 50.0,
+                                          ),
+                                          onPressed: () {
+                                            print('IconButton pressed ...');
+                                          },
                                         ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
                                       ),
                                     ),
                                   ],
@@ -184,7 +190,7 @@ class _DeleteWidgetState extends State<DeleteWidget>
                                       0.0, 20.0, 0.0, 16.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      context.pushNamed('Homefeed');
+                                      context.pushNamed('Home');
                                     },
                                     text: 'ລົບ',
                                     options: FFButtonOptions(
@@ -195,8 +201,7 @@ class _DeleteWidgetState extends State<DeleteWidget>
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: Color(0xFFD23959),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(

@@ -30,6 +30,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
     _model.birthdayController ??= TextEditingController();
     _model.genderController1 ??= TextEditingController();
     _model.genderController2 ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -47,7 +48,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: Color(0xFFACB7F4),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -75,16 +76,25 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
               width: 100.0,
               height: 100.0,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: Color(0xFF8C9CF4),
               ),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(40.0, 20.0, 0.0, 0.0),
-                child: Text(
-                  'ບັນທຶກ',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Noto Serif Lao',
-                        fontSize: 18.0,
-                      ),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('profile');
+                  },
+                  child: Text(
+                    'ບັນທຶກ',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Noto Serif Lao',
+                          fontSize: 18.0,
+                        ),
+                  ),
                 ),
               ),
             ),
@@ -565,7 +575,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                                     autofillHints: [AutofillHints.birthday],
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'ວັນທີ/້ດືອນ/ປີເກີດ',
+                                      labelText: 'ເພດ',
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(

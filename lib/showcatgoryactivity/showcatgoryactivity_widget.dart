@@ -34,6 +34,7 @@ class _ShowcatgoryactivityWidgetState extends State<ShowcatgoryactivityWidget> {
     _model.datetimeController ??= TextEditingController();
     _model.locationController ??= TextEditingController();
     _model.numberpeopleController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -301,7 +302,7 @@ class _ShowcatgoryactivityWidgetState extends State<ShowcatgoryactivityWidget> {
                                                     fontFamily:
                                                         'Noto Serif Lao',
                                                     color: Color(0xFF050505),
-                                                    fontSize: 18.0,
+                                                    fontSize: 22.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -474,7 +475,7 @@ class _ShowcatgoryactivityWidgetState extends State<ShowcatgoryactivityWidget> {
                                         .override(
                                           fontFamily: 'Noto Serif Lao',
                                           color: Color(0xFF050505),
-                                          fontSize: 18.0,
+                                          fontSize: 20.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(

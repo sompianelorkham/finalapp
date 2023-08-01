@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,13 @@ class _SelectinterestWidgetState extends State<SelectinterestWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SelectinterestModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      context.pushNamed('Home');
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -133,7 +141,7 @@ class _SelectinterestWidgetState extends State<SelectinterestWidget> {
                                         iconColor: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         iconSize: 25.0,
-                                        elevation: 4.0,
+                                        elevation: 0.0,
                                         borderColor:
                                             FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
@@ -141,21 +149,17 @@ class _SelectinterestWidgetState extends State<SelectinterestWidget> {
                                             BorderRadius.circular(16.0),
                                       ),
                                       unselectedChipStyle: ChipStyle(
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBtnText,
+                                        backgroundColor: Color(0xFFD8DDF3),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Noto Serif Lao',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 18.0,
-                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black,
+                                              fontSize: 23.0,
+                                              fontWeight: FontWeight.w600,
                                             ),
-                                        iconColor: Color(0xFF7DB2F8),
-                                        iconSize: 23.0,
+                                        iconColor: Color(0xFF3386F4),
+                                        iconSize: 30.0,
                                         elevation: 0.0,
                                         borderRadius:
                                             BorderRadius.circular(16.0),
@@ -212,8 +216,8 @@ class _SelectinterestWidgetState extends State<SelectinterestWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             70.0, 32.0, 0.0, 32.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            context.pushNamed('wellcome');
                           },
                           text: 'ສຳເລັດ',
                           options: FFButtonOptions(

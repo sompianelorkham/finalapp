@@ -102,9 +102,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => SelectinterestWidget(),
         ),
         FFRoute(
-          name: 'Homefeed',
-          path: '/homefeed',
-          builder: (context, params) => HomefeedWidget(),
+          name: 'Home',
+          path: '/home',
+          builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
           name: 'detail',
@@ -117,9 +117,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => EditEventWidget(),
         ),
         FFRoute(
-          name: 'ecreate',
-          path: '/ecreate',
-          builder: (context, params) => EcreateWidget(),
+          name: 'Create',
+          path: '/create',
+          builder: (context, params) => CreateWidget(),
         ),
         FFRoute(
           name: 'join',
