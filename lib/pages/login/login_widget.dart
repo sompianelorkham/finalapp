@@ -28,7 +28,9 @@ class _LoginWidgetState extends State<LoginWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      context.pushNamed('Home');
+      context.pushNamed('Login');
+
+      context.pushNamed('home');
     });
 
     _model.emailAddressController ??= TextEditingController();
@@ -95,8 +97,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.asset(
                                     'assets/images/children.png',
-                                    width: 300.0,
-                                    height: 200.0,
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -297,7 +297,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       0.0, 15.0, 0.0, 16.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      context.pushNamed('Home');
+                                      context.pushNamed('home');
                                     },
                                     text: 'ເຂົ້າສູ່ລະບົບ',
                                     options: FFButtonOptions(

@@ -111,6 +111,11 @@ class _WellcomeWidgetState extends State<WellcomeWidget>
     super.initState();
     _model = createModel(context, () => WellcomeModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      context.pushNamed('Login');
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -210,9 +215,9 @@ class _WellcomeWidgetState extends State<WellcomeWidget>
                                       8.0, 0.0, 0.0, 16.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      context.pushNamed('Home');
+                                      context.pushNamed('Login');
                                     },
-                                    text: 'ຖັດໄປ',
+                                    text: 'Sign in',
                                     options: FFButtonOptions(
                                       width: 230.0,
                                       height: 52.0,
@@ -244,6 +249,36 @@ class _WellcomeWidgetState extends State<WellcomeWidget>
                           ],
                         ).animateOnPageLoad(
                             animationsMap['rowOnPageLoadAnimation']!),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Align(
+                            alignment: AlignmentDirectional(1.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  140.0, 0.0, 0.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('Register');
+                                },
+                                child: Text(
+                                  'Create an account',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        fontSize: 18.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

@@ -12,7 +12,7 @@ class FFLocalizations {
   static FFLocalizations of(BuildContext context) =>
       Localizations.of<FFLocalizations>(context, FFLocalizations)!;
 
-  static List<String> languages() => ['en'];
+  static List<String> languages() => ['lo', 'en', 'th'];
 
   static late SharedPreferences _prefs;
   static Future initialize() async =>
@@ -37,9 +37,11 @@ class FFLocalizations {
       (kTranslationsMap[key] ?? {})[locale.toString()] ?? '';
 
   String getVariableText({
+    String? loText = '',
     String? enText = '',
+    String? thText = '',
   }) =>
-      [enText][languageIndex] ?? '';
+      [loText, enText, thText][languageIndex] ?? '';
 
   static const Set<String> _languagesWithShortCode = {
     'ar',

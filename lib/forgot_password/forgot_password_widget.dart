@@ -199,8 +199,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       child: Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed('Login');
+                          onPressed: () {
+                            print('Button-Login pressed ...');
                           },
                           text: 'ສົ່ງຂໍ້ຄວາມຢືນຢັນ',
                           options: FFButtonOptions(

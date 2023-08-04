@@ -56,7 +56,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pushNamed('Home');
+              context.pushNamed('Login');
             },
           ),
           title: Text(
@@ -262,14 +262,23 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'ອອອກຈາກລະບົບ',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyLarge
-                                    .override(
-                                      fontFamily: 'Noto Serif Lao',
-                                      fontSize: 25.0,
-                                    ),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('Login');
+                                },
+                                child: Text(
+                                  'ອອອກຈາກລະບົບ',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyLarge
+                                      .override(
+                                        fontFamily: 'Noto Serif Lao',
+                                        fontSize: 25.0,
+                                      ),
+                                ),
                               ),
                             ),
                           ),

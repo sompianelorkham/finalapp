@@ -78,13 +78,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? LoginWidget() : RegisterWidget(),
+          appStateNotifier.loggedIn ? LoginWidget() : WellcomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? LoginWidget() : RegisterWidget(),
+              appStateNotifier.loggedIn ? LoginWidget() : WellcomeWidget(),
         ),
         FFRoute(
           name: 'Login',
@@ -100,11 +100,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Selectinterest',
           path: '/selectinterest',
           builder: (context, params) => SelectinterestWidget(),
-        ),
-        FFRoute(
-          name: 'Home',
-          path: '/home',
-          builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
           name: 'detail',
@@ -165,6 +160,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'wellcome',
           path: '/wellcome',
           builder: (context, params) => WellcomeWidget(),
+        ),
+        FFRoute(
+          name: 'home',
+          path: '/home',
+          builder: (context, params) => HomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -331,7 +331,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/register';
+            return '/wellcome';
           }
           return null;
         },

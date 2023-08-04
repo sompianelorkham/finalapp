@@ -30,7 +30,7 @@ class _SelectinterestWidgetState extends State<SelectinterestWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      context.pushNamed('Home');
+      context.pushNamed('profile');
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -87,7 +87,6 @@ class _SelectinterestWidgetState extends State<SelectinterestWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                         child: Container(
-                          width: 439.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -159,13 +158,13 @@ class _SelectinterestWidgetState extends State<SelectinterestWidget> {
                                               fontWeight: FontWeight.w600,
                                             ),
                                         iconColor: Color(0xFF3386F4),
-                                        iconSize: 30.0,
+                                        iconSize: 25.0,
                                         elevation: 0.0,
                                         borderRadius:
                                             BorderRadius.circular(16.0),
                                       ),
-                                      chipSpacing: 25.0,
-                                      rowSpacing: 50.0,
+                                      chipSpacing: 20.0,
+                                      rowSpacing: 40.0,
                                       multiselect: false,
                                       alignment: WrapAlignment.start,
                                       controller:
@@ -217,7 +216,7 @@ class _SelectinterestWidgetState extends State<SelectinterestWidget> {
                             70.0, 32.0, 0.0, 32.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('wellcome');
+                            context.pushNamed('home');
                           },
                           text: 'ສຳເລັດ',
                           options: FFButtonOptions(

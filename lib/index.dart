@@ -2,7 +2,6 @@
 export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/register/register_widget.dart' show RegisterWidget;
 export '/selectinterest/selectinterest_widget.dart' show SelectinterestWidget;
-export '/home/home_widget.dart' show HomeWidget;
 export '/detail/detail_widget.dart' show DetailWidget;
 export '/edit_event/edit_event_widget.dart' show EditEventWidget;
 export '/create/create_widget.dart' show CreateWidget;
@@ -16,3 +15,4 @@ export '/notification/notification_widget.dart' show NotificationWidget;
 export '/category/category_widget.dart' show CategoryWidget;
 export '/forgot_password/forgot_password_widget.dart' show ForgotPasswordWidget;
 export '/wellcome/wellcome_widget.dart' show WellcomeWidget;
+export '/home/home_widget.dart' show HomeWidget;

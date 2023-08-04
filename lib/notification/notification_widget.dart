@@ -47,48 +47,11 @@ class _NotificationWidgetState extends State<NotificationWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          leading: InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.pushNamed('Home');
-            },
-            child: Icon(
-              Icons.chevron_left,
-              color: FlutterFlowTheme.of(context).secondaryText,
-              size: 30.0,
-            ),
-          ),
-          title: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
-            child: Text(
-              'ການແຈ້ງເຕືອນ',
-              style: FlutterFlowTheme.of(context).headlineLarge.override(
-                    fontFamily: 'Noto Serif Lao',
-                    color: Color(0xFF3386F4),
-                    fontSize: 30.0,
-                  ),
-            ),
-          ),
-          actions: [
-            Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
-                child: Icon(
-                  Icons.notifications,
-                  color: FlutterFlowTheme.of(context).secondaryText,
-                  size: 30.0,
-                ),
-              ),
-            ),
-          ],
-          centerTitle: false,
-          elevation: 0.0,
+          backgroundColor: FlutterFlowTheme.of(context).primary,
+          automaticallyImplyLeading: true,
+          actions: [],
+          centerTitle: true,
+          elevation: 4.0,
         ),
         body: ListView(
           padding: EdgeInsets.fromLTRB(
@@ -99,25 +62,6 @@ class _NotificationWidgetState extends State<NotificationWidget> {
           ),
           scrollDirection: Axis.vertical,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(150.0, 0.0, 0.0, 0.0),
-                    child: Text(
-                      'Manager',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Noto Serif Lao',
-                            fontSize: 20.0,
-                          ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: Container(
@@ -138,6 +82,27 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                   ),
                 ),
               ),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(0.0, 0.0),
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(150.0, 0.0, 0.0, 0.0),
+                    child: Text(
+                      'ການແຈ້ງເຕືອນ',
+                      style:
+                          FlutterFlowTheme.of(context).headlineLarge.override(
+                                fontFamily: 'Noto Serif Lao',
+                                color: Color(0xFF3386F4),
+                                fontSize: 30.0,
+                              ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             Row(
               mainAxisSize: MainAxisSize.max,

@@ -357,8 +357,7 @@ class _DetailWidgetState extends State<DetailWidget> {
                   ],
                 ),
                 Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 24.0, 12.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 24.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -374,7 +373,7 @@ class _DetailWidgetState extends State<DetailWidget> {
                           child: Icon(
                             Icons.location_on,
                             color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 50.0,
+                            size: 30.0,
                           ),
                         ),
                       ),
@@ -473,7 +472,7 @@ class _DetailWidgetState extends State<DetailWidget> {
                                 Icons.person,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
-                                size: 50.0,
+                                size: 30.0,
                               ),
                             ),
                           ),
@@ -567,7 +566,7 @@ class _DetailWidgetState extends State<DetailWidget> {
                             child: Icon(
                               Icons.male,
                               color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 50.0,
+                              size: 30.0,
                             ),
                           ),
                         ),

@@ -190,7 +190,7 @@ class _DeleteWidgetState extends State<DeleteWidget>
                                       0.0, 20.0, 0.0, 16.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      context.pushNamed('Home');
+                                      context.pushNamed('home');
                                     },
                                     text: 'ລົບ',
                                     options: FFButtonOptions(
@@ -207,7 +207,7 @@ class _DeleteWidgetState extends State<DeleteWidget>
                                           .override(
                                             fontFamily: 'Noto Serif Lao',
                                             color: Colors.white,
-                                            fontSize: 50.0,
+                                            fontSize: 40.0,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(

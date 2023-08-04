@@ -71,7 +71,7 @@ class _CreateWidgetState extends State<CreateWidget> {
                 size: 30.0,
               ),
               onPressed: () async {
-                context.pop();
+                context.pushNamed('home');
               },
             ),
             title: Text(
